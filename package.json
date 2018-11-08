@@ -1,27 +1,42 @@
 {
-  "name": "auto-web-app",
+  "name": "mmc-qa-automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "mmc automation suite",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "wdio"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@percy-io/percy-webdriverio": "^0.1.9",
-    "wdio-chromedriver-service": "^0.1.3",
-    "wdio-dot-reporter": "0.0.10",
-    "wdio-json-reporter": "^0.3.1",
-    "wdio-mocha-framework": "^0.6.2",
-    "wdio-selenium-standalone-service": "0.0.10",
-    "webdriverio": "^4.13.1"
+  "repository": {
+    "type": "git",
+    "url": "/mmc-qa-automation"
   },
   "dependencies": {
-    "chromedriver": "^2.41.0"
-  }
+    "browserstack-local": "^1.3.3",
+    "chai": "^4.1.2",
+    "webdriverio": "^4.12.0"
+  },
+  "devDependencies": {
+    "@applitools/eyes.webdriverio": "^2.0.0",
+    "chromedriver": "^2.38.3",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "wdio-browserstack-service": "^0.1.16",
+    "wdio-chromedriver-service": "^0.1.3",
+    "wdio-dot-reporter": "0.0.9",
+    "wdio-firefox-profile-service": "^0.1.1",
+    "wdio-junit-reporter": "^0.4.4",
+    "wdio-mocha-framework": "^0.5.13",
+    "wdio-sauce-service": "^0.4.8",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-spec-reporter": "^0.1.4"
+  },
+  "scripts": {
+    "test": "wdio wdio.local.conf.js",
+    "test-bs": "wdio wdio.browserstack.conf.js --spec test/HomePage/header.spec.js",
+    "test-mobileSauce": "wdio wdio.sauce-mobile.conf.js",
+    "test-sauce": "wdio wdio.sauce.conf.js"
+  },
+  "author": "Manasa Sureshkumar",
+  "license": "ISC"
 }
